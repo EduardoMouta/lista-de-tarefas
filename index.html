@@ -16,6 +16,8 @@
 
       <div class="entrada-tarefa">
         <label for="campo-tarefa"> Nova tarefa: </label>
+        <label for="campo-data">Data de vencimento:</label>
+        <input type="date" id="campo-data" />
 
         <input
           type="text"
@@ -27,29 +29,32 @@
         <button id="botao-cancelar" type="button" hidden>Cancelar</button>
       </div>
 
-      <!-- Filtro de tarefas -->
-      <div class="filtros" aria-label="Filtrar tarefas">
-        <button type="button" data-filtro="todas" aria-pressed="true">
-          Todas
-        </button>
+      <!-- Agrupamento de filtros e busca -->
+      <div class="filtros-busca">
+        <!-- Filtro de tarefas -->
+        <div class="filtros" aria-label="Filtrar tarefas">
+          <button type="button" data-filtro="todas" aria-pressed="true">
+            Todas
+          </button>
 
-        <button type="button" data-filtro="pendentes" aria-pressed="false">
-          Pendentes
-        </button>
+          <button type="button" data-filtro="pendentes" aria-pressed="false">
+            Pendentes
+          </button>
 
-        <button type="button" data-filtro="concluidas" aria-pressed="false">
-          Concluídas
-        </button>
-      </div>
+          <button type="button" data-filtro="concluidas" aria-pressed="false">
+            Concluídas
+          </button>
+        </div>
 
-      <!-- Busca de tarefas -->
-      <div class="busca-tarefas">
-        <label for="campo-busca">Buscar tarefa:</label>
-        <input
-          type="search"
-          id="campo-busca"
-          placeholder="Digite para pesquisar..."
-        />
+        <!-- Busca de tarefas -->
+        <div class="busca-tarefas">
+          <label for="campo-busca">Buscar tarefa:</label>
+          <input
+            type="search"
+            id="campo-busca"
+            placeholder="Digite para pesquisar..."
+          />
+        </div>
       </div>
 
       <div

@@ -29,6 +29,8 @@ const anuncioBusca = document.getElementById("anuncio-busca");
 
 const mensagemVazia = document.getElementById("mensagem-vazia");
 
+const campoData = document.getElementById("campo-data");
+
 // Recupera as tarefas salvas no navegador
 let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 
@@ -77,6 +79,7 @@ function adicionarTarefa() {
     });
 
     tarefa.texto = textoTarefa;
+    tarefa.dataVencimento = campoData.value;
     tarefaEmEdicao = null;
 
     salvarTarefas();
@@ -85,6 +88,7 @@ function adicionarTarefa() {
     mensagemAcessivel.textContent = `Tarefa ${textoTarefa} atualizada.`;
 
     campoTarefa.value = "";
+    campoData.value = "";
     botaoAdicionar.textContent = "Adicionar";
 
     return;
@@ -101,6 +105,7 @@ function adicionarTarefa() {
     id: Date.now(),
     texto: textoTarefa,
     concluida: false,
+    dataVencimento: campoData.value,
   };
 
   // Adicionando à lista de tarefas
@@ -118,6 +123,7 @@ function adicionarTarefa() {
 
   // Limpando o campo
   campoTarefa.value = "";
+  campoData.value = "";
 }
 
 // Evento de clique no botão
@@ -173,6 +179,12 @@ function renderizarTarefas() {
 
     texto.textContent = tarefa.texto;
 
+    const data = document.createElement("small");
+
+    if (tarefa.dataVencimento) {
+      data.textContent = `Vencimento: ${tarefa.dataVencimento}`;
+    }
+
     // Botão concluir
     const botaoConcluir = document.createElement("button");
 
@@ -213,6 +225,7 @@ function renderizarTarefas() {
       tarefaEmEdicao = tarefa.id;
 
       campoTarefa.value = tarefa.texto;
+      campoData.value = tarefa.dataVencimento || "";
       campoTarefa.focus();
 
       botaoAdicionar.textContent = "Salvar edição";
@@ -245,10 +258,11 @@ function renderizarTarefas() {
 
     // Montando o item
     novaTarefa.appendChild(texto);
+    novaTarefa.appendChild(data);
     novaTarefa.appendChild(botaoConcluir);
     novaTarefa.appendChild(botaoEditar);
     novaTarefa.appendChild(botaoExcluir);
-
+    
     listaTarefas.appendChild(novaTarefa);
   });
 }
@@ -261,6 +275,7 @@ function cancelarEdicao() {
   tarefaEmEdicao = null;
 
   campoTarefa.value = "";
+  campoData.value = "";
 
   botaoAdicionar.textContent = "Adicionar";
 

@@ -23,7 +23,7 @@ body {
     background-color: #1f2937;
 
     width: 100%;
-    max-width: 500px;
+    max-width: 1000px;
 
     padding: 35px;
     border-radius: 12px;
@@ -199,11 +199,27 @@ button:focus-visible {
     background-color: #b91c1c;
 }
 
+/* Agrupamento de filtros e busca */
+.filtros-busca {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Filtros */
 .filtros {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 20px;
+}
+
+/* Campo de busca */
+.busca-tarefas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .filtros button {
