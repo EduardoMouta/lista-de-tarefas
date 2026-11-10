@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Minha Lista de Tarefas</h1>
+
+      <p class="descricao">Organize suas atividades do dia.</p>
+
+      <div class="entrada-tarefa">
+        <label for="campo-tarefa"> Nova tarefa: </label>
+
+        <input
+          type="text"
+          id="campo-tarefa"
+          placeholder="Digite uma tarefa..."
+        />
+
+        <button id="botao-adicionar" type="button">Adicionar</button>
+        <button id="botao-cancelar" type="button" hidden>Cancelar</button>
+      </div>
+
+      <!-- Filtro de tarefas -->
+      <div class="filtros" aria-label="Filtrar tarefas">
+        <button type="button" data-filtro="todas" aria-pressed="true">
+          Todas
+        </button>
+
+        <button type="button" data-filtro="pendentes" aria-pressed="false">
+          Pendentes
+        </button>
+
+        <button type="button" data-filtro="concluidas" aria-pressed="false">
+          Concluídas
+        </button>
+      </div>
+
+      <!-- Busca de tarefas -->
+      <div class="busca-tarefas">
+        <label for="campo-busca">Buscar tarefa:</label>
+        <input
+          type="search"
+          id="campo-busca"
+          placeholder="Digite para pesquisar..."
+        />
+      </div>
+
+      <div
+        id="anuncio-busca"
+        class="leitor-tela"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      ></div>
+
+      <!-- Contadores de tarefas -->
+      <section class="contadores" aria-labelledby="titulo-contadores">
+        <h2 id="titulo-contadores">Resumo das tarefas</h2>
+
+        <p tabindex="0">Total: <span id="total-tarefas">0</span></p>
+
+        <p tabindex="0">Pendentes: <span id="tarefas-pendentes">0</span></p>
+
+        <p tabindex="0">Concluídas: <span id="tarefas-concluidas">0</span></p>
+      </section>
+
+      <div
+        id="anuncio-contadores"
+        class="leitor-tela"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      ></div>
+
+      <ul id="lista-tarefas">
+        <!-- Lista não ordenada -->
+      </ul>
+
+      <p id="mensagem-vazia" hidden>Nenhuma tarefa encontrada.</p>
+
+      <div
+        id="mensagem-acessivel"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      ></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

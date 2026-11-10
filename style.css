@@ -1,0 +1,243 @@
+
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    background-color: #111827;
+    color: #f9fafb;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    background-color: #1f2937;
+
+    width: 100%;
+    max-width: 500px;
+
+    padding: 35px;
+    border-radius: 12px;
+}
+
+/* Título */
+h1 {
+    color: #f9fafb;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+/* Descrição */
+.descricao {
+    color: #d1d5db;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+
+/* Área de entrada */
+.entrada-tarefa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Rótulo do campo */
+.entrada-tarefa label {
+    width: 100%;
+    color: #f9fafb;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Campo de texto */
+.entrada-tarefa input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #374151;
+    border-radius: 6px;
+    background-color: #111827;
+    color: #f9fafb;
+    font-size: 14px;
+}
+
+/* Botão */
+button {
+    padding: 12px 18px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Efeito do botão */
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Lista de tarefas */
+#lista-tarefas {
+    margin-top: 25px;
+    list-style: none;
+}
+
+
+/* Itens da lista */
+#lista-tarefas li {
+    background-color: #111827;
+    color: #f9fafb;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border-left: 3px solid #60a5fa;
+    overflow-wrap: anywhere;
+}
+
+
+/* Organização dos itens */
+#lista-tarefas li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Texto da tarefa */
+#lista-tarefas li span {
+    cursor: pointer;
+    overflow-wrap: anywhere;
+}
+
+/* Tarefa concluída */
+#lista-tarefas li.concluida span {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+/* Botão de eeditar */
+.botao-editar {
+  background-color: #d97706;
+  color: white;
+}
+
+.botao-editar:hover {
+  background-color: #b45309;
+}
+
+/* Botão de excluir */
+.botao-excluir {
+    background-color: #dc2626;
+    padding: 8px 12px;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+/* Efeito do botão excluir */
+.botao-excluir:hover {
+    background-color: #b91c1c;
+}
+
+/* Destaque de foco para acessibilidade */
+input:focus-visible,
+button:focus-visible {
+    outline: 3px solid #60a5fa;
+    outline-offset: 3px;
+}
+
+
+/* Organização das tarefas */
+#lista-tarefas li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Texto da tarefa */
+#lista-tarefas li span {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+/* Tarefa concluída */
+#lista-tarefas li.concluida span {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+/* Botões das tarefas */
+#lista-tarefas li button {
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+/* Botão concluir */
+.botao-concluir {
+    background-color: #2563eb;
+}
+
+/* Botão excluir */
+.botao-excluir {
+    background-color: #dc2626;
+}
+
+.botao-excluir:hover {
+    background-color: #b91c1c;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.filtros button {
+  padding: 8px 14px;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  background-color: #111827;
+  color: #f9fafb;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filtros button:hover {
+  background-color: #374151;
+}
+
+.filtros button[aria-pressed="true"] {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.contadores h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.leitor-tela {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
