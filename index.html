@@ -15,17 +15,22 @@
       <p class="descricao">Organize suas atividades do dia.</p>
 
       <div class="entrada-tarefa">
-        <label for="campo-tarefa"> Nova tarefa: </label>
-        <label for="campo-data">Data de vencimento:</label>
-        <input type="date" id="campo-data" />
+        <div class="campo-data">
+          <label for="campo-data">Data de vencimento:</label>
+          <input type="date" id="campo-data" />
+        </div>
 
-        <input
-          type="text"
-          id="campo-tarefa"
-          placeholder="Digite uma tarefa..."
-        />
+        <div class="campo-descricao">
+          <label for="campo-tarefa">Nova tarefa:</label>
+          <input
+            type="text"
+            id="campo-tarefa"
+            placeholder="Digite uma tarefa..."
+          />
+        </div>
 
         <button id="botao-adicionar" type="button">Adicionar</button>
+
         <button id="botao-cancelar" type="button" hidden>Cancelar</button>
       </div>
 
@@ -69,11 +74,21 @@
       <section class="contadores" aria-labelledby="titulo-contadores">
         <h2 id="titulo-contadores">Resumo das tarefas</h2>
 
-        <p tabindex="0">Total: <span id="total-tarefas">0</span></p>
+        <div class="cards-contadores">
+          <div class="card-contador">
+            <p tabindex="0">Total: <span id="total-tarefas">0</span></p>
+          </div>
 
-        <p tabindex="0">Pendentes: <span id="tarefas-pendentes">0</span></p>
+          <div class="card-contador">
+            <p tabindex="0">Pendentes: <span id="tarefas-pendentes">0</span></p>
+          </div>
 
-        <p tabindex="0">Concluídas: <span id="tarefas-concluidas">0</span></p>
+          <div class="card-contador">
+            <p tabindex="0">
+              Concluídas: <span id="tarefas-concluidas">0</span>
+            </p>
+          </div>
+        </div>
       </section>
 
       <div
