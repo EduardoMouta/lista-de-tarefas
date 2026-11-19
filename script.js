@@ -170,6 +170,12 @@ function renderizarTarefas() {
   tarefasFiltradas.forEach(function (tarefa) {
     const novaTarefa = document.createElement("li");
 
+    const informacoesTarefa = document.createElement("div");
+    informacoesTarefa.classList.add("informacoes-tarefa");
+
+    const acoesTarefa = document.createElement("div");
+    acoesTarefa.classList.add("acoes-tarefa");
+
     if (tarefa.concluida) {
       novaTarefa.classList.add("concluida");
     }
@@ -257,12 +263,19 @@ function renderizarTarefas() {
     });
 
     // Montando o item
-    novaTarefa.appendChild(texto);
-    novaTarefa.appendChild(data);
-    novaTarefa.appendChild(botaoConcluir);
-    novaTarefa.appendChild(botaoEditar);
-    novaTarefa.appendChild(botaoExcluir);
-    
+    // Agrupando as informações
+    informacoesTarefa.appendChild(texto);
+    informacoesTarefa.appendChild(data);
+
+    // Agrupando os botões
+    acoesTarefa.appendChild(botaoConcluir);
+    acoesTarefa.appendChild(botaoEditar);
+    acoesTarefa.appendChild(botaoExcluir);
+
+    // Montando o item
+    novaTarefa.appendChild(informacoesTarefa);
+    novaTarefa.appendChild(acoesTarefa);
+
     listaTarefas.appendChild(novaTarefa);
   });
 }

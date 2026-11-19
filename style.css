@@ -303,3 +303,32 @@ button:focus-visible {
   white-space: nowrap;
   border: 0;
 }
+
+@media (max-width: 600px) {
+    .entrada-tarefa {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .filtros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+}
+
+/* Informações da tarefa */
+.informacoes-tarefa {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    flex-basis: 200px;
+    min-width: 0;
+    gap: 5px;
+}
+
+/* Ações da tarefa */
+.acoes-tarefa {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
